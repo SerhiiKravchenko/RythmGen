@@ -20,8 +20,8 @@ let rythmicThird = [LevelGroups.Group3 : ["9","10","11","12","13"]]
 let secondsPerMinute = 60.0
 
 
-class RythmSeqModel: NSObject {
-    static let shared = RythmSeqModel()
+class NotesModel: NSObject {
+    static let shared = NotesModel()
 
     var isPlay = false
     var isMetronomePlay = false

@@ -12,6 +12,8 @@
 		4E0B8139225200E50006F2E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E0B8138225200E50006F2E6 /* Assets.xcassets */; };
 		4E0B813C225200E50006F2E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E0B813A225200E50006F2E6 /* LaunchScreen.storyboard */; };
 		4E0B814A2252036D0006F2E6 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0B81492252036D0006F2E6 /* Notes.swift */; };
+		4E0B814C225250E30006F2E6 /* PlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0B814B225250E30006F2E6 /* PlayVC.swift */; };
+		4E0B814E225251110006F2E6 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0B814D225251110006F2E6 /* SettingsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		4E0B813B225200E50006F2E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E0B813D225200E50006F2E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E0B81492252036D0006F2E6 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		4E0B814B225250E30006F2E6 /* PlayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayVC.swift; sourceTree = "<group>"; };
+		4E0B814D225251110006F2E6 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 		4E0B8146225201260006F2E6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4E0B814B225250E30006F2E6 /* PlayVC.swift */,
+				4E0B814D225251110006F2E6 /* SettingsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -168,7 +174,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E0B8132225200E30006F2E6 /* AppDelegate.swift in Sources */,
+				4E0B814E225251110006F2E6 /* SettingsVC.swift in Sources */,
 				4E0B814A2252036D0006F2E6 /* Notes.swift in Sources */,
+				4E0B814C225250E30006F2E6 /* PlayVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
