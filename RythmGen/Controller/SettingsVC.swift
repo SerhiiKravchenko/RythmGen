@@ -18,15 +18,15 @@ class SettingsVC: UIViewController {
     }
     
     private func setValueOfSliderLabel() {
-        tempoLabel.text = "\(NotesModel.shared.tempo) Bit/s"
-        tempoSlider.setValue(Float(NotesModel.shared.tempo), animated: true)
+        tempoLabel.text = "\(model.tempo) Bit/s"
+        tempoSlider.setValue(Float(model.tempo), animated: true)
     }
 
     @IBAction func decrimentTempoButton(_ sender: Any) {
         if model.tempo == 30 {
             return
         } else {
-            NotesModel.shared.tempo -= 1
+            model.tempo -= 1
             setValueOfSliderLabel()
         }
     }
@@ -35,57 +35,54 @@ class SettingsVC: UIViewController {
         if model.tempo == 120 {
             return
         } else {
-            NotesModel.shared.tempo += 1
+            model.tempo += 1
             setValueOfSliderLabel()
-            print(NotesModel.shared.tempo)
         }
     }
     
     @IBAction func tempoSliderAction(_ sender: UISlider) {
         let val = Int(sender.value)
-        NotesModel.shared.tempo = val
+        model.tempo = val
         tempoLabel.text = "\(val) Bit/s"
     }
     
     @IBAction func firstGroupAction(_ sender: Any) {
-        if(NotesModel.shared.firstGroup){
-            NotesModel.shared.firstGroup = false
+        if(model.firstGroup){
+            model.firstGroup = false
         } else {
-            NotesModel.shared.firstGroup = true
+            model.firstGroup = true
         }
     }
+    
     @IBAction func secondGroupAction(_ sender: Any) {
-        if(!NotesModel.shared.secondGroup){
-            NotesModel.shared.secondGroup = true
+        if(!model.secondGroup){
+            model.secondGroup = true
         } else {
-            NotesModel.shared.secondGroup = false
+            model.secondGroup = false
         }
     }
+    
     @IBAction func thirdGroupAction(_ sender: Any) {
-        if(!NotesModel.shared.thirdGroup){
-            NotesModel.shared.thirdGroup = true
+        if(!model.thirdGroup){
+            model.thirdGroup = true
         } else {
-            NotesModel.shared.thirdGroup = false
+            model.thirdGroup = false
         }
     }
     
     @IBAction func metronomAction(_ sender: Any) {
-        if(!NotesModel.shared.isMetronomePlay){
-            NotesModel.shared.isMetronomePlay = true
+        if(!model.isMetronomePlay){
+            model.isMetronomePlay = true
         } else {
-            NotesModel.shared.isMetronomePlay = false
+            model.isMetronomePlay = false
         }
     }
     
     @IBAction func playNotesAction(_ sender: Any) {
-        if(!NotesModel.shared.isNotesPlay){
-            NotesModel.shared.isNotesPlay = true
+        if(!model.isNotesPlay){
+            model.isNotesPlay = true
         } else {
-            NotesModel.shared.isNotesPlay = false
+            model.isNotesPlay = false
         }
     }
-    
-    
-    
-
 }
