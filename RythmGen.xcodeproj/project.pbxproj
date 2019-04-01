@@ -14,6 +14,8 @@
 		4E0B814A2252036D0006F2E6 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0B81492252036D0006F2E6 /* Notes.swift */; };
 		4E0B814C225250E30006F2E6 /* PlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0B814B225250E30006F2E6 /* PlayVC.swift */; };
 		4E0B814E225251110006F2E6 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0B814D225251110006F2E6 /* SettingsVC.swift */; };
+		4E0B8151225293560006F2E6 /* OneNoteCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0B814F225293560006F2E6 /* OneNoteCVC.swift */; };
+		4E0B8152225293560006F2E6 /* OneNoteCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E0B8150225293560006F2E6 /* OneNoteCVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		4E0B81492252036D0006F2E6 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		4E0B814B225250E30006F2E6 /* PlayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayVC.swift; sourceTree = "<group>"; };
 		4E0B814D225251110006F2E6 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		4E0B814F225293560006F2E6 /* OneNoteCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneNoteCVC.swift; sourceTree = "<group>"; };
+		4E0B8150225293560006F2E6 /* OneNoteCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OneNoteCVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				4E0B8135225200E30006F2E6 /* Main.storyboard */,
+				4E0B814F225293560006F2E6 /* OneNoteCVC.swift */,
+				4E0B8150225293560006F2E6 /* OneNoteCVC.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,6 +169,7 @@
 				4E0B813C225200E50006F2E6 /* LaunchScreen.storyboard in Resources */,
 				4E0B8139225200E50006F2E6 /* Assets.xcassets in Resources */,
 				4E0B8137225200E30006F2E6 /* Main.storyboard in Resources */,
+				4E0B8152225293560006F2E6 /* OneNoteCVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E0B8132225200E30006F2E6 /* AppDelegate.swift in Sources */,
+				4E0B8151225293560006F2E6 /* OneNoteCVC.swift in Sources */,
 				4E0B814E225251110006F2E6 /* SettingsVC.swift in Sources */,
 				4E0B814A2252036D0006F2E6 /* Notes.swift in Sources */,
 				4E0B814C225250E30006F2E6 /* PlayVC.swift in Sources */,

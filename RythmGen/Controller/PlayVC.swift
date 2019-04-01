@@ -9,22 +9,47 @@
 import UIKit
 
 class PlayVC: UIViewController {
-
+    
+    @IBOutlet weak var notesCVOutlet: UICollectionView!
+    var selectedNote = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        notesCVOutlet.delegate = self
+        notesCVOutlet.dataSource = self
+        notesCVOutlet.register(UINib(nibName: "OneNoteCVC", bundle: nil), forCellWithReuseIdentifier: "OneNote")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let position = indexPath.row.description
+        selectedNote = position
+        performSegue(withIdentifier: "allNotesCVC", sender: nil)
     }
-    */
+    
+    func setupGridView() {
+        let flow = notesCVOutlet.collectionViewLayout as! UICollectionViewFlowLayout
+        flow.minimumInteritemSpacing = CGFloat(1)
+        flow.minimumLineSpacing = CGFloat(25)
+    }
+}
 
+extension PlayVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return NotesModel.shared.resultArr.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = notesCVOutlet.dequeueReusableCell(withReuseIdentifier: "OneNote", for: indexPath) as! OneNoteCVC
+        cell.setImage(imageName: NotesModel.shared.resultArr[indexPath.row])
+        cell.tag = indexPath.row + 1
+        print(cell.tag)
+        return cell
+    }
+}
+
+extension PlayVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = view.frame.width / 5
+        return CGSize(width: width, height: width)
+    }
 }
