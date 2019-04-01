@@ -58,6 +58,7 @@
 		4E0B8130225200E30006F2E6 /* RythmGen */ = {
 			isa = PBXGroup;
 			children = (
+				4E0B813D225200E50006F2E6 /* Info.plist */,
 				4E0B8145225201160006F2E6 /* Model */,
 				4E0B8147225201310006F2E6 /* View */,
 				4E0B8146225201260006F2E6 /* Controller */,
@@ -97,7 +98,6 @@
 			children = (
 				4E0B8131225200E30006F2E6 /* AppDelegate.swift */,
 				4E0B813A225200E50006F2E6 /* LaunchScreen.storyboard */,
-				4E0B813D225200E50006F2E6 /* Info.plist */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
