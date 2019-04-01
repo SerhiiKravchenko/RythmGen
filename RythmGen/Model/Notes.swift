@@ -14,9 +14,10 @@ enum LevelGroups {
     case Group3
 }
 
-let rythmicFirst = [LevelGroups.Group1 : ["1","2","3","4","5"]]
-let rythmicSecond = [LevelGroups.Group2 : ["6","7","8"]]
-let rythmicThird = [LevelGroups.Group3 : ["9","10","11","12","13"]]
+let notesArr = [LevelGroups.Group1 : ["1","2","3","4","5"],
+                LevelGroups.Group2 : ["6","7","8"],
+                LevelGroups.Group3 : ["9","10","11","12","13"]]
+
 let secondsPerMinute = 60.0
 
 var model: NotesModel{
@@ -49,13 +50,13 @@ class NotesModel: NSObject {
     private func resultArrayFromSelectedGroups() -> [String] {
         var resultArr = [String]()
         if(firstGroup){
-            resultArr += rythmicFirst[LevelGroups.Group1] ?? [""]
+            resultArr += notesArr[LevelGroups.Group1]!
         }
         if(secondGroup){
-            resultArr += rythmicSecond[LevelGroups.Group2] ?? [""]
+            resultArr += notesArr[LevelGroups.Group2]!
         }
         if(thirdGroup){
-            resultArr += rythmicThird[LevelGroups.Group3] ?? [""]
+            resultArr += notesArr[LevelGroups.Group3]!
         }
         return resultArr
     }
