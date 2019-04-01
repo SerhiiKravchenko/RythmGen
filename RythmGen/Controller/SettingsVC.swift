@@ -13,10 +13,6 @@ class SettingsVC: UIViewController {
     @IBOutlet weak var tempoLabel: UILabel!
     @IBOutlet weak var tempoSlider: UISlider!
     
-    var model: NotesModel{
-        return NotesModel.shared
-    }
-    
     private func setValueOfSliderLabel() {
         tempoLabel.text = "\(model.tempo) Bit/s"
         tempoSlider.setValue(Float(model.tempo), animated: true)

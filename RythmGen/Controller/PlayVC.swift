@@ -18,29 +18,38 @@ class PlayVC: UIViewController {
         notesCVOutlet.delegate = self
         notesCVOutlet.dataSource = self
         notesCVOutlet.register(UINib(nibName: "OneNoteCVC", bundle: nil), forCellWithReuseIdentifier: "OneNote")
+        setupGridView()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AllNotesCVC" {
+            let AllNotesCVC = segue.destination as! AllNotesCVC
+            AllNotesCVC.receivedNote = selectedNote
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let position = indexPath.row.description
-        selectedNote = position
-        performSegue(withIdentifier: "allNotesCVC", sender: nil)
+        selectedNote = indexPath.row.description
+        performSegue(withIdentifier: "AllNotesCVC", sender: nil)
     }
     
     func setupGridView() {
         let flow = notesCVOutlet.collectionViewLayout as! UICollectionViewFlowLayout
-        flow.minimumInteritemSpacing = CGFloat(1)
+        flow.minimumInteritemSpacing = CGFloat(5)
         flow.minimumLineSpacing = CGFloat(25)
+        flow.sectionInset.top = CGFloat(19)
+        flow.sectionInset.left = CGFloat(10)
     }
 }
 
 extension PlayVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return NotesModel.shared.resultArr.count
+        return model.resultArr.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = notesCVOutlet.dequeueReusableCell(withReuseIdentifier: "OneNote", for: indexPath) as! OneNoteCVC
-        cell.setImage(imageName: NotesModel.shared.resultArr[indexPath.row])
+        cell.setImage(imageName: model.resultArr[indexPath.row])
         cell.tag = indexPath.row + 1
         print(cell.tag)
         return cell
