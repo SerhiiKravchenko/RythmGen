@@ -286,7 +286,7 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="025-MP-ikp">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="SectionHeaderView" id="025-MP-ikp" customClass="SectionHeaderView" customModule="RythmGen" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="568" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -302,6 +302,9 @@
                                         <constraint firstItem="uPc-sN-sDb" firstAttribute="top" secondItem="025-MP-ikp" secondAttribute="topMargin" constant="8" id="igy-qu-h1P"/>
                                         <constraint firstItem="uPc-sN-sDb" firstAttribute="leading" secondItem="025-MP-ikp" secondAttribute="leadingMargin" constant="8" id="uwu-Lz-I26"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="groupTitleLabel" destination="uPc-sN-sDb" id="Qk5-Y8-GoQ"/>
+                                    </connections>
                                 </collectionReusableView>
                             </collectionView>
                         </subviews>

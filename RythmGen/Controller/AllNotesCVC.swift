@@ -53,6 +53,15 @@ extension AllNotesCVC: UICollectionViewDataSource {
         cell.imageName = noteImageName
         return cell
     }
+    
+    // Section header View
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let sectionHeaderView = allNotesOutlet.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SectionHeaderView", for: indexPath) as! SectionHeaderView
+        let group = model.notesForSelect[indexPath.section]
+        sectionHeaderView.groupTitle = group.groupTitle
+        return sectionHeaderView
+    }
 }
 
 extension AllNotesCVC: UICollectionViewDelegateFlowLayout {
