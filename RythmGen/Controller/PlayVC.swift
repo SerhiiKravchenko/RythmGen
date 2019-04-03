@@ -44,14 +44,13 @@ class PlayVC: UIViewController {
 
 extension PlayVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return model.resultArr.count
+        return model.generatedNotesForPlay.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = notesCVOutlet.dequeueReusableCell(withReuseIdentifier: "OneNote", for: indexPath) as! OneNoteCVC
-        cell.setImage(imageName: model.resultArr[indexPath.row])
+        cell.imageName = model.generatedNotesForPlay[indexPath.row]
         cell.tag = indexPath.row + 1
-        print(cell.tag)
         return cell
     }
 }

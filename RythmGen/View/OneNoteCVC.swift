@@ -12,9 +12,16 @@ class OneNoteCVC: UICollectionViewCell {
 
     @IBOutlet weak var oneNoteImageOutlet: UIImageView!
     
-    func setImage(imageName: String) {
-        self.oneNoteImageOutlet.image = UIImage(named: imageName)
-        self.backgroundColor = .orange
+    var imageName: String! {
+        didSet{
+            oneNoteImageOutlet.image = UIImage(named: imageName)
+            backgroundColor = .orange
+        }
     }
+    
+//    func setImage(imageName: String) {
+//        self.oneNoteImageOutlet.image = UIImage(named: imageName)
+//        self.backgroundColor = .orange
+//    }
 
 }
